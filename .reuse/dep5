@@ -1,0 +1,16 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Aurora Scanner
+Upstream-Contact: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+Source: https://github.com/lirios/aurora-scanner
+
+Files: *.gitignore
+Copyright: none
+License: CC0-1.0
+
+Files: *.gitattributes
+Copyright: none
+License: CC0-1.0
+
+Files: *.tag
+Copyright: none
+License: CC0-1.0
