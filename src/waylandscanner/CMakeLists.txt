@@ -4,7 +4,7 @@
 
 liri_add_executable(waylandscanner
     SOURCES
-        qtwaylandscanner.cpp
+        waylandscanner.cpp
     OUTPUT_NAME
         aurora-wayland-scanner
     INSTALL_DIRECTORY
