@@ -865,14 +865,14 @@ bool Scanner::process()
                     printf("\n");
                     printf("    {\n");
                     printf("        Q_UNUSED(client);\n");
-                    printf("        Resource *r = Resource::fromResource(resource);\n");
-                    printf("        if (Q_UNLIKELY(!r->%s_object)) {\n", interfaceNameStripped);
+                    printf("        Resource *auroraResource = Resource::fromResource(resource);\n");
+                    printf("        if (Q_UNLIKELY(!auroraResource->%s_object)) {\n", interfaceNameStripped);
                     if (e.type == "destructor")
                         printf("            wl_resource_destroy(resource);\n");
                     printf("            return;\n");
                     printf("        }\n");
-                    printf("        static_cast<%s *>(r->%s_object)->%s_%s(\n", interfaceName, interfaceNameStripped, interfaceNameStripped, e.name.constData());
-                    printf("            r");
+                    printf("        static_cast<%s *>(auroraResource->%s_object)->%s_%s(\n", interfaceName, interfaceNameStripped, interfaceNameStripped, e.name.constData());
+                    printf("            auroraResource");
                     for (const WaylandArgument &a : e.arguments) {
                         printf(",\n");
                         QByteArray cType = waylandToCType(a.type, a.interface);
