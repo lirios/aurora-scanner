@@ -7,8 +7,6 @@ liri_add_executable(waylandscanner
         waylandscanner.cpp
     OUTPUT_NAME
         aurora-wayland-scanner
-    INSTALL_DIRECTORY
-        "${INSTALL_LIBEXECDIR}"
     DEFINES
         QT_NO_CAST_FROM_ASCII
         QT_NO_FOREACH
