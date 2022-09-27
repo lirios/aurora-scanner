@@ -493,7 +493,7 @@ bool Scanner::process()
         printf("QT_WARNING_DISABLE_CLANG(\"-Wmissing-field-initializers\")\n");
         QByteArray serverExport;
         if (m_headerPath.size())
-            serverExport = printExportMacro("Q_WAYLAND_SERVER_", preProcessorProtocolName);
+            serverExport = printExportMacro("AURORA_WAYLAND_SERVER_", preProcessorProtocolName);
         printf("\n");
         printf("namespace PrivateServer {\n");
         printf("\n");
@@ -994,7 +994,7 @@ bool Scanner::process()
 
         QByteArray clientExport;
         if (m_headerPath.size())
-            clientExport = printExportMacro("Q_WAYLAND_CLIENT_", preProcessorProtocolName);
+            clientExport = printExportMacro("AURORA_WAYLAND_CLIENT_", preProcessorProtocolName);
 
         printf("\n");
         printf("namespace PrivateClient {\n");
