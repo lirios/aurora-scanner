@@ -1,5 +1,4 @@
 # SPDX-FileCopyrightText: 2022 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
-#
 # SPDX-License-Identifier: BSD-3-Clause
 
 cmake_minimum_required(VERSION 3.19)
@@ -20,7 +19,7 @@ endif()
 include(FeatureSummary)
 
 ## Find Qt:
-find_package(Qt6
+find_package(Qt6 6.6.0
     REQUIRED
     COMPONENTS
         Core
@@ -44,9 +43,6 @@ remove_definitions(-DQT_NO_KEYWORDS)
 
 ## CMake settings:
 include(KDECMakeSettings)
-
-## Project setup:
-qt_standard_project_setup(REQUIRES 6.6)
 
 ## Disable use of C++ API deprecated in Qt 5.15
 add_compile_definitions(QT_DISABLE_DEPRECATED_UP_TO=0x050F00)
