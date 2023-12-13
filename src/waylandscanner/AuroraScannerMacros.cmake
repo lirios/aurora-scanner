@@ -25,6 +25,9 @@ function(aurora_generate_wayland_protocol_client_sources target)
 
     foreach(protocol_file IN LISTS _arg_FILES)
         get_filename_component(protocol_name "${protocol_file}" NAME_WLE)
+        if(NOT IS_ABSOLUTE "${protocol_file}")
+            set(protocol_file "${CMAKE_CURRENT_SOURCE_DIR}/${protocol_file}")
+	endif()
 
         set(c_code_path "${target_binary_dir}/wayland_generated/wayland-${protocol_name}-protocol.c")
         set(c_header_path "${target_binary_dir}/wayland_generated/wayland-${protocol_name}-client-protocol.h")
@@ -105,6 +108,9 @@ function(aurora_generate_wayland_protocol_server_sources target)
 
     foreach(protocol_file IN LISTS _arg_FILES)
         get_filename_component(protocol_name "${protocol_file}" NAME_WLE)
+        if(NOT IS_ABSOLUTE "${protocol_file}")
+            set(protocol_file "${CMAKE_CURRENT_SOURCE_DIR}/${protocol_file}")
+	endif()
 
         set(c_code_path "${target_binary_dir}/wayland_generated/wayland-${protocol_name}-protocol.c")
         set(c_header_path "${target_binary_dir}/wayland_generated/wayland-${protocol_name}-server-protocol.h")
